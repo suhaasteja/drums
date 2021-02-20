@@ -1,0 +1,76 @@
+<h1>Drums</h1>
+<meta charset="UTF-8">
+<link rel = "stylesheet" href = "style.css">
+<body>
+<div class = 'keys'>
+    <div class = "key" data-key = "65">
+        <kbd>A</kbd>
+        <span class = "sounds">Boom</span>
+    </div>
+    <div class = "key" data-key = "83">
+        <kbd>S</kbd>
+        <span class  = "sounds">Clap</span>
+    </div>
+    <div class = "key" data-key = "68">
+        <kbd>D</kbd>
+        <span class = "sounds">Kick</span>
+    </div>
+    <div class = "key" data-key = "70">
+        <kbd>F</kbd>
+        <span class = "sounds">Openhat</span>
+    </div>
+    <div class = 'key' data-key = "71">
+        <kbd>G</kbd>
+        <span class = "sounds">Ride</span>
+    </div>
+    <div class = "key" data-key = "72">
+        <kbd>H</kbd>
+        <span class = "sounds">Tink</span>
+    </div>
+    <div class = "key" data-key = "74">
+        <kbd>J</kbd>
+        <span class = "sounds">Tom</span>
+    </div>
+    <div class = "key" data-key ="75">
+        <kbd>K</kbd>
+        <span class = "sounds">Hihat</span>
+    </div>
+    <div class = "key" data-key="76">
+        <kbd>L</kbd>
+        <span class = "sounds">Snare</span>
+    </div>
+</div>
+
+<audio data-key = "65" src  = "sounds/boom.wav"></audio>
+<audio data-key = "83" src  = "sounds/clap.wav"></audio>
+<audio data-key = "68" src  = "sounds/kick.wav"></audio>
+<audio data-key = "70" src  = "sounds/openhat.wav"></audio>
+<audio data-key="71" src="sounds/ride.wav"></audio>
+<audio data-key="72" src="sounds/tink.wav"></audio>
+<audio data-key="74" src="sounds/tom.wav"></audio>
+<audio data-key="75" src="sounds/hihat.wav"></audio>
+<audio data-key="76" src="sounds/snare.wav"></audio>
+</body>
+
+<script>
+    window.addEventListener('keydown', function(e) {
+        const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
+        if(!audio) return;
+        audio.currentTime = 0;
+        audio.play();
+    })
+</script>
+
+<style>
+.key{
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;;
+}
+*{
+    font-size: 30px;
+    text-align: center;
+    background-color:cornsilk;
+}
+</style>
